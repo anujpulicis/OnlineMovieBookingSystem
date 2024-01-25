@@ -60,5 +60,24 @@ public class User {
         System.out.println("--------------------------------------");
     }
 
+    public void  DeAllocateSeat()
+    {
+        try {
+            this.st.forEach((m)->{
+
+                Movie movieObj=MovieCatalog.getInstance(m.getMovie_booked());
+                m.getAllocatedSeat().forEach((ele)-> movieObj.UpdateSeatbyA(ele.getfirst(),ele.getsecond()));
+            });
+        }
+        catch (Exception e)
+        {
+
+            System.out.println("Exception Cought in User-> DeAllocateSeat ");
+            e.printStackTrace();
+
+        }
+
+    }
+
 
 }

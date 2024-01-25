@@ -140,4 +140,8 @@ public class Movie {
             return "Enter Valid Row and Column";
         }
     }
+    public  void UpdateSeatbyA(int row,int col)
+    {
+        this.Seat[row][col]="A";
+    }
 }

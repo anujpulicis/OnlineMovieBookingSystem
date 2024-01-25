@@ -74,8 +74,10 @@ public class UserManager {
     {
         if(mp.containsKey(Email))
         {
+            User userObj=mp.get(Email);
             mp.remove(Email);
             st.remove(Email);
+            userObj.DeAllocateSeat();
             System.out.println("User Removed from our Databases Successfully");
         }
         else
